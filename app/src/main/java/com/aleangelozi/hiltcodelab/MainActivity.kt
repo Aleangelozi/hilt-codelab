@@ -6,6 +6,7 @@ import android.util.Log
 import com.aleangelozi.hiltcodelab.database.DatabaseAdapter
 import com.aleangelozi.hiltcodelab.database.DatabaseService
 import com.aleangelozi.hiltcodelab.network.NetworkAdapter
+import com.aleangelozi.hiltcodelab.network.NetworkService
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     // Field Injection
     @Inject lateinit var databaseAdapter: DatabaseAdapter
-    @Inject lateinit var networkAdapter: NetworkAdapter
+    //@Inject lateinit var networkAdapter: NetworkAdapter
+    @Inject lateinit var networkService: NetworkService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "DatabaseAdapter: $databaseAdapter")
         databaseAdapter.log("Hello Hilt")
 
-        networkAdapter.log("Interface binding")
+        //networkAdapter.log("Interface binding")
+        networkService.performNetworkCall()
     }
 
     // Method Injection
