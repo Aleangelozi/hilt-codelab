@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.aleangelozi.hiltcodelab.database.DatabaseAdapter
 import com.aleangelozi.hiltcodelab.database.DatabaseService
+import com.aleangelozi.hiltcodelab.hilt.CallInterceptor
+import com.aleangelozi.hiltcodelab.hilt.ResponseInterceptor
 import com.aleangelozi.hiltcodelab.network.NetworkAdapter
 import com.aleangelozi.hiltcodelab.network.NetworkService
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     // Field Injection
     @Inject lateinit var databaseAdapter: DatabaseAdapter
     //@Inject lateinit var networkAdapter: NetworkAdapter
+
+    //@CallInterceptor
+    @ResponseInterceptor
     @Inject lateinit var networkService: NetworkService
 
     override fun onCreate(savedInstanceState: Bundle?) {
