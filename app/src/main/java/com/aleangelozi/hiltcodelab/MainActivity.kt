@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
     @ResponseInterceptor
     @Inject lateinit var networkService: NetworkService
 
+    @ResponseInterceptor
+    @Inject lateinit var networkService2: NetworkService
+
+    @ResponseInterceptor
+    @Inject lateinit var networkService3: NetworkService
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         //networkAdapter.log("Interface binding")
         networkService.performNetworkCall()
+        networkService2.performNetworkCall()
+        networkService3.performNetworkCall()
     }
 
     // Method Injection
